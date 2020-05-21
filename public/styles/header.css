@@ -8,5 +8,14 @@ header {
   height: 400px;
   color: #FFFFFF;
   background-color: #000000;
-  background-image: url("https://www.transparenttextures.com/patterns/retina-wood.png");
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
+  
+}
+
+@media screen and (min-width: 1024px) {
+
+  header {
+    margin:2em;
+    margin-top: 200px;
+  }
 }
