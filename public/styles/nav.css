@@ -1,0 +1,49 @@
+nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4056A1;
+  height: 120px;
+  color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+nav span {
+  flex: 1;
+  margin: 1em;
+  font-family: 'Bungee', cursive;
+}
+
+nav p {
+  font-size: 14px;
+  margin: 1em;
+}
+
+nav i {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* animation: pulse 5s infinite; */
+}
+
+/* 
+nav i {
+  color: red;
+  animation-duration: 3s;
+  animation-name: example;
+  animation-iteration-count: infinite;
+
+
+} */
+
+/* @keyframes pulse {
+  0% {
+    top: 0px
+  }
+  100%{
+    bottom: 0px;
+  }
+} */
