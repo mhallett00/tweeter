@@ -72,6 +72,11 @@ $(document).ready(function() {
     }
   });
 
+  $("#tweet-form-toggle").click(function(){
+    $("#submit-tweet").slideToggle();
+    $("#tweet-text").focus();
+  });
+
   // Fetches tweets
   const loadTweets = function() {
     $.ajax({
