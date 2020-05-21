@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 120px;
+  height: 400px;
+  color: #FFFFFF;
+  background-color: #000000;
+  background-image: url("https://www.transparenttextures.com/patterns/retina-wood.png");
+}
