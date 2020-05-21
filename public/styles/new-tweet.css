@@ -9,6 +9,10 @@ main form {
   margin-bottom: 1em;
 }
 
+#submit-tweet {
+  display:none;
+}
+
 main form label {
   font-weight: bold;
 }
