@@ -13,6 +13,7 @@ html {
 /*
  * Global layout stuff
  */
+ 
 
 body {
   display: flex;
@@ -31,4 +32,17 @@ body {
 main.container{
   width: 90%;
   background-color: #f3f1ed;  
+}
+
+@media screen and (min-width: 1024px) {
+
+  body {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  main.container {
+    margin: 1.5em;
+    margin-top: 176px;
+  }
 }

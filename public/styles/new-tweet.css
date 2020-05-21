@@ -48,5 +48,3 @@ main output {
 output.charOverLimit {
   color: red;
 }
-
-/* border-bottom: 2px solid #545149; */
