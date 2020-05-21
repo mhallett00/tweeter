@@ -4,28 +4,22 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
- $(document).ready(function() {
+$(document).ready(function() {
   
 
   // loops through the passed tweet object and posts the formatted tweets to the tweet container in reverse chronological order.
-   const renderTweets = (tweets) => {
-     tweets.reverse();
-     $.each(tweets, function(index, tweet) {
-       $('.tweet-container').append(createTweetElement(tweet));
-     });
-   };
+  const renderTweets = (tweets) => {
+    tweets.reverse();
+    $.each(tweets, function(index, tweet) {
+      $('.tweet-container').append(createTweetElement(tweet));
+    });
+  };
 
-   const escape =  function(str) {
+  const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
-
-  // const escape =  function(str) {
-  //   let newText = document.createTextNode(str);
-  //   console.log(newText)
-  //   return newText;
-  // }
+  };
 
   // creates the tweet html for passed tweet information
   const createTweetElement = (tweet) => {
@@ -52,42 +46,45 @@
   </article>
   `);
 
-  return $tweet;
+    return $tweet;
   };
 
-  $("#submit-tweet").submit(function( event ) {
+  // New tweet post functionality that clears and refetches tweets to display
+  $("#submit-tweet").submit(function(event) {
     event.preventDefault();
     const $charCount = $(this).children($('textarea'))[1].value.length;
     if ($charCount === 0) {
-      $('.error-empty').slideDown()
+      $('.error-empty').slideDown();
     } else if ($charCount > 140) {
-      $('.error-overLimit').slideDown()
+      $('.error-overLimit').slideDown();
     } else {
-      $('.error-empty').slideUp()
-      $('.error-overLimit').slideUp()
+      $('.error-empty').slideUp();
+      $('.error-overLimit').slideUp();
       $.ajax({
-        url: '/tweets', 
+        url: '/tweets',
         method: 'POST',
         data: $(this).serialize()
       })
-      .done(function() {
-        $('.tweet-container').empty();
-        loadTweets()
-      });
-    } 
+        .done(function() {
+          $('.tweet-container').empty();
+          loadTweets();
+        });
+    }
   });
 
+  // Fetches tweets
   const loadTweets = function() {
     $.ajax({
       url: '/tweets',
       method: 'GET',
     })
-    .done(function(tweets){
-      console.log('get finished!');
-      renderTweets(tweets);
-    })
+      .done(function(tweets) {
+        console.log('get finished!');
+        renderTweets(tweets);
+      });
   };
 
+  // Calling to load tweets on page ready
   loadTweets();
  
- });
+});
