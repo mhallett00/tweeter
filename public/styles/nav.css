@@ -18,10 +18,6 @@ nav span {
   font-family: 'Bungee', cursive;
 }
 
-/* #bounce {
-  height: 2em;
-} */
-
 @keyframes bounce {
   0% { top: 0px; }
   50% {top: 5px;}
