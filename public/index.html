@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/to-top-btn.css" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" ></script>
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -29,10 +30,10 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span id="tweeter">tweeter</span>
       <div id="tweet-form-toggle">
         <p><b>Write</b> a new tweet</p>
-      <i class="fas fa-angle-down"></i>
+        <i class="fas fa-angle-down"></i>
       </div> 
     </nav>
     
@@ -62,7 +63,8 @@
       </section>
       <section class="tweet-container">
       </section>
-    </main>   
+        <i class="fas fa-chevron-circle-up fa-3x" id="back-TT" ></i>
+    </main>
     <script src="scripts/composer-char-counter.js"></script>
   </body>
 </html>
