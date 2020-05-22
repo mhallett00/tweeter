@@ -72,9 +72,28 @@ $(document).ready(function() {
     }
   });
 
+  // Handles new tweet field toggle
   $("#tweet-form-toggle").click(function(){
     $("#submit-tweet").slideToggle();
     $("#tweet-text").focus();
+  });
+
+// cause back to top button to appear
+  $(window).scroll(function(){
+    if (window.scrollY) {
+      $("#back-TT").fadeIn();
+      $("#tweet-form-toggle").fadeOut();
+    } else {
+      $("#back-TT").fadeOut();
+      $("#tweet-form-toggle").fadeIn();
+    }
+  });
+
+  $("#back-TT").click(function(){
+    window.scrollTo(0,0);
+    $("#submit-tweet").slideDown();
+    $("#tweet-text").focus();
+
   });
 
   // Fetches tweets
