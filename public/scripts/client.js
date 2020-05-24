@@ -54,8 +54,10 @@ $(document).ready(function() {
     event.preventDefault();
     const $charCount = $(this).children($('textarea'))[1].value.length;
     if ($charCount === 0) {
+      $('.error-overLimit').hide();
       $('.error-empty').slideDown();
     } else if ($charCount > 140) {
+      $('.error-empty').hide();
       $('.error-overLimit').slideDown();
     } else {
       $('.error-empty').slideUp();
@@ -66,6 +68,8 @@ $(document).ready(function() {
         data: $(this).serialize()
       })
         .done(function() {
+          $('#tweet-text').val("");
+          $('#submit-tweet').slideUp();
           $('.tweet-container').empty();
           loadTweets();
         });
@@ -103,7 +107,6 @@ $(document).ready(function() {
       method: 'GET',
     })
       .done(function(tweets) {
-        console.log('get finished!');
         renderTweets(tweets);
       });
   };
