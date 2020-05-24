@@ -15,6 +15,7 @@ article.tweet {
   margin-bottom: 1em;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 
 article.tweet:hover {
@@ -40,7 +41,6 @@ article.tweet header span {
 }
 
 article.tweet div.tweet-content {
-  /* flex:1; */
   margin: 0.5em;
   font-weight: bold;
   border-bottom: 2px solid #545149;
@@ -62,6 +62,7 @@ article.tweet:hover div.hidden {
 
 article.tweet div p {
   margin: 0.5em;
+  word-wrap: break-word;
   
 }
 
