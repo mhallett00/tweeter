@@ -44,5 +44,6 @@ main.container{
   main.container {
     margin: 1.5em;
     margin-top: 176px;
+    max-width: 45%;
   }
 }
